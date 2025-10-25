@@ -26,6 +26,12 @@ void setup() {
   COM_DEBUG.begin(115200);
   COM_WITH_MASTER.begin(BAUD, SERIAL_8N1, MASTER_RX_PIN, MASTER_TX_PIN);
   COM_WITH_SLAVE.begin(BAUD, SERIAL_8N1, SLAVE_RX_PIN, SLAVE_TX_PIN);
+
+  Message hello_msg;
+  hello_msg.dest_id = NEAREST_CUBE; //non so chi sia il mio master
+  hello_msg.type = MSG_HELLO;
+  hello_msg.payload.hello_payload.id = SELF_ID;
+  COM_WITH_MASTER.begin(BAUD, SERIAL_8N1, MASTER_RX_PIN, MASTER_TX_PIN);
 }
 
 void loop() {
@@ -33,7 +39,7 @@ void loop() {
         Message msg_from_master;
         COM_WITH_MASTER.readBytes((uint8_t*)&msg_from_master, sizeof(Message));
 
-        if(msg_from_master.dest_id == SELF_ID) {
+        if(msg_from_master.dest_id == SELF_ID || msg_from_master.dest_id == NEAREST_CUBE) {
             if (msg_from_master.type == MSG_HELLO){
                 MASTER_ID = msg_from_master.payload.hello_payload.id;
 
@@ -52,7 +58,7 @@ void loop() {
         Message msg_from_slave;
         COM_WITH_SLAVE.readBytes((uint8_t*)&msg_from_slave, sizeof(Message));
 
-        if(msg_from_slave.dest_id == SELF_ID) {
+        if(msg_from_slave.dest_id == SELF_ID || msg_from_slave.dest_id == NEAREST_CUBE) {
             if (msg_from_slave.type == MSG_HELLO){
                 SLAVE_ID = msg_from_slave.payload.hello_payload.id;
                 Message ack;

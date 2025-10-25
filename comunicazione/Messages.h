@@ -2,6 +2,7 @@
 #pragma pack(1)
 #include <cstdint>
 #define ROOT_ID 0
+#define NEAREST_CUBE -1
 
 enum MessageType : int {
     MSG_HELLO,

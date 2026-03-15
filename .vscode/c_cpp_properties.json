@@ -1,0 +1,33 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/Users/matti/.platformio/packages/framework-espidf/components/esp_driver_ledc/include",
+                "C:/Users/matti/.platformio/packages/framework-espidf/components/esp_common/include",
+                "C:/Users/matti/.platformio/packages/framework-espidf/components/freertos/FreeRTOS-Kernel/include",
+                "C:/Users/matti/.platformio/packages/framework-espidf/components/freertos/config/include/freertos",
+                "C:/Users/matti/.platformio/packages/framework-espidf/components/esp_hw_support/include",
+                "C:/Users/matti/.platformio/packages/framework-espidf/components/hal/include",
+                "C:/Users/matti/.platformio/packages/framework-espidf/components/soc/esp32c3/include",
+                "C:/Users/matti/.platformio/packages/framework-espidf/components/esp_driver_gpio/include",
+                "C:/Users/matti/.platformio/packages/framework-espidf/components/esp_rom/include",
+                "C:/Users/matti/.platformio/packages/framework-espidf/components/freertos/config/riscv/include",
+                "C:/Users/matti/.platformio/packages/framework-espidf/components/freertos/FreeRTOS-Kernel/portable/riscv/include/freertos",
+                "C:/Users/matti/.platformio/packages/framework-espidf/components/freertos/config/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.22621.0",
+            "compilerPath": "cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64"
+        }
+    ],
+    "version": 4
+}
